@@ -362,25 +362,25 @@ if (__name__ == "__main__"):
 	equation.set('') 
 
 	## Create HoverButtons and place at a particular location inside the root window `calculatorGUI`. When user press the button, the command or function affiliated to that button is executed
-	button1 = HoverButton(calculatorGUI, text=' \n 1 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press(1), height=1, width=7).grid(row=6, column=1)
+	button1 = HoverButton(calculatorGUI, text=' \n 1 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['Product Sans', 28], command=lambda: press(1), height=1, width=7).grid(row=6, column=1)
 
-	button2 = HoverButton(calculatorGUI, text=' \n 2 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press(2), height=1, width=7).grid(row=6, column=2) 
+	button2 = HoverButton(calculatorGUI, text=' \n 2 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['Product Sans', 28], command=lambda: press(2), height=1, width=7).grid(row=6, column=2) 
 
-	button3 = HoverButton(calculatorGUI, text=' \n 3 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press(3), height=1, width=7).grid(row=6, column=3) 
+	button3 = HoverButton(calculatorGUI, text=' \n 3 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['Product Sans', 28], command=lambda: press(3), height=1, width=7).grid(row=6, column=3) 
 
-	button4 = HoverButton(calculatorGUI, text=' \n 4 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press(4), height=1, width=7).grid(row=5, column=1) 
+	button4 = HoverButton(calculatorGUI, text=' \n 4 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['Product Sans', 28], command=lambda: press(4), height=1, width=7).grid(row=5, column=1) 
 
-	button5 = HoverButton(calculatorGUI, text=' \n 5 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press(5), height=1, width=7).grid(row=5, column=2) 
+	button5 = HoverButton(calculatorGUI, text=' \n 5 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['Product Sans', 28], command=lambda: press(5), height=1, width=7).grid(row=5, column=2) 
 
-	button6 = HoverButton(calculatorGUI, text=' \n 6 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press(6), height=1, width=7).grid(row=5, column=3) 
+	button6 = HoverButton(calculatorGUI, text=' \n 6 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['Product Sans', 28], command=lambda: press(6), height=1, width=7).grid(row=5, column=3) 
 
-	button7 = HoverButton(calculatorGUI, text=' \n 7 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press(7), height=1, width=7).grid(row=4, column=1) 
+	button7 = HoverButton(calculatorGUI, text=' \n 7 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['Product Sans', 28], command=lambda: press(7), height=1, width=7).grid(row=4, column=1) 
 
-	button8 = HoverButton(calculatorGUI, text=' \n 8 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press(8), height=1, width=7).grid(row=4, column=2) 
+	button8 = HoverButton(calculatorGUI, text=' \n 8 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['Product Sans', 28], command=lambda: press(8), height=1, width=7).grid(row=4, column=2) 
 
-	button9 = HoverButton(calculatorGUI, text=' \n 9 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press(9), height=1, width=7).grid(row=4, column=3) 
+	button9 = HoverButton(calculatorGUI, text=' \n 9 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['Product Sans', 28], command=lambda: press(9), height=1, width=7).grid(row=4, column=3) 
 
-	button0 = HoverButton(calculatorGUI, text=' \n 0 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press(0), height=1, width=7).grid(row=7, column=1) 
+	button0 = HoverButton(calculatorGUI, text=' \n 0 \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['Product Sans', 28], command=lambda: press(0), height=1, width=7).grid(row=7, column=1) 
 
 	plus = HoverButton(calculatorGUI, text=' \n + \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28, 'bold'], command=lambda: press(" + "), height=1, width=7).grid(row=7, column=4) 
 
@@ -394,17 +394,17 @@ if (__name__ == "__main__"):
 
 	clear = HoverButton(calculatorGUI, text=' C ', fg='#000000', bg='#FF0000', relief=FLAT, activeforeground='#FFFFFF', activebackground='#FF1111', font=['CircularStd', 26], command=clear, height=1, width=7).grid(row=4, column=6)
 
-	parentheses1 = HoverButton(calculatorGUI, text=' \n ( \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press("("), height=1, width=7).grid(row=7, column=5)
+	parentheses1 = HoverButton(calculatorGUI, text=' \n ( \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['Product Sans', 28], command=lambda: press("("), height=1, width=7).grid(row=7, column=5)
 
-	parentheses2 = HoverButton(calculatorGUI, text=' \n ) \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press(")"), height=1, width=7).grid(row=7, column=6)
+	parentheses2 = HoverButton(calculatorGUI, text=' \n ) \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['Product Sans', 28], command=lambda: press(")"), height=1, width=7).grid(row=7, column=6)
 
 	power = HoverButton(calculatorGUI, text=' \n xⁿ \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press("^"), height=1, width=7).grid(row=5, column=5)
 
-	ι = HoverButton(calculatorGUI, text=' \n ι \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press("ι"), height=1, width=7).grid(row=5, column=6)
+	ι = HoverButton(calculatorGUI, text=' \n ι \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['Product Sans', 28], command=lambda: press("ι"), height=1, width=7).grid(row=5, column=6)
 
-	e = HoverButton(calculatorGUI, text=' \n e \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press("e"), height=1, width=7).grid(row=6, column=5)
+	e = HoverButton(calculatorGUI, text=' \n e \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['Product Sans', 28], command=lambda: press("e"), height=1, width=7).grid(row=6, column=5)
 
-	π = HoverButton(calculatorGUI, text=' \n π \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press("π"), height=1, width=7).grid(row=6, column=6)
+	π = HoverButton(calculatorGUI, text=' \n π \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['Product Sans', 28], command=lambda: press("π"), height=1, width=7).grid(row=6, column=6)
 
 	decimal = HoverButton(calculatorGUI, text=' \n . \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press("."), height=1, width=7).grid(row=7, column=2)
 
