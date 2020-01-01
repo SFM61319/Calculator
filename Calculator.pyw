@@ -11,6 +11,9 @@ import math as m
 ## Importing `choice` from `random` as `ch`
 from random import choice as ch
 
+## Importing `sleep` from `time` as `ch` to delay processes and animations
+from time import sleep as s
+
 ## Import everything from `tkinter` module
 from tkinter import *
 from tkinter import messagebox as mb
@@ -20,12 +23,13 @@ expression = ""
 
 
 
+
+
 def evalall(string1):   ## Advanced `evalall()` function to evaluate mathematical constants as well
     if ((type(string1) == int) or (type(string1) == float)):
         string1 = str(string1)
     if ((string1 == '') or (string1.isspace() == True)):
         return 1
-    inf = float('inf')
     string1 = string1.replace(' ', '')
     string1 = string1.replace('π', str(m.pi))
     string1 = string1.replace('p', str(m.pi))
@@ -37,6 +41,7 @@ def evalall(string1):   ## Advanced `evalall()` function to evaluate mathematica
     string1 = string1.replace('÷', '/')
     string1 = string1.replace('^', '**')
     string1 = string1.replace('∞', str(inf))
+    string1 = string1.replace('/0', '*'+str(inf))
     string1 = string1.replace('sin(', 'm.sin(')
     string1 = string1.replace('cos(', 'm.cos(')
     string1 = string1.replace('tan(', 'm.tan(')
@@ -44,13 +49,10 @@ def evalall(string1):   ## Advanced `evalall()` function to evaluate mathematica
     string1 = string1.replace('sec(', '1/m.cos(')
     string1 = string1.replace('cot(', '1/m.tan(')
     string1 = string1.replace('fact(', 'm.gamma(1+')
-    string1 = string1.replace('ln(', '2.302585092994046*log(')
     string1 = string1.replace('log(', 'm.log10(')
     string1 = string1.replace('log2(', 'm.log2(')
+    string1 = string1.replace('ln(', 'm.log(')
     string1 = string1.replace('√(', 'm.sqrt(')
-
-    if (string1 == str(1j ** 1j)):
-        return f'e^(-π/2) = {m.e ** (-m.pi / 2)}'
 
     number = eval(string1)
     if (type(number) != complex):	## `number` is Real; Real Numbers set is a subset of Imaginary Numbers set
@@ -58,12 +60,6 @@ def evalall(string1):   ## Advanced `evalall()` function to evaluate mathematica
             return '∞'
         if (number == int(number)):
             number = int(number)
-        '''
-        if (round(number, 5) == 3.14159):
-            return f'= {number} ≈ π'
-        if (round(number, 5) == 2.71828):
-            return f'= {number} ≈ e'
-        '''
         if (round(number, 8) == 0):
             number = round(number, 5)
         if (int(number) == number):
@@ -72,18 +68,32 @@ def evalall(string1):   ## Advanced `evalall()` function to evaluate mathematica
     
     a = number.real
     b = number.imag
-    number = a + b * 1j
+    number = a + (b * 1j)
     if (round(a, 8) == 0):
         a = 0
-        return f'{b}ι'
-    if (int(round(b, 8)) == 0):
-    	b = 0
-    	return int(a)
+        if not (round(b, 8) == 0):
+            if (b == int(b)):
+                b = int(b)
+            number = b * 1j
+        else:
+            number = b = 0
+    if (round(b, 8) == 0):
+        b = 0
+        if not (round(a, 8) == 0):
+            if (a == int(a)):
+                a = int(a)
+            number = a
+        else:
+            number = 0
     if (number == (-1+1.2246467991473532e-16j)):
-    	return -1
+        return -1
+    if (number == (0.20787957635076193+0j)):
+        return 0.20787957635076193
     if (number == 1j):
-    	return '√-1'
-    return f'{number.real} + ({number.imag})ι'
+        number = 'ι'
+    if (number == (0+0j)):
+        return 0
+    return str(number).replace('1j', 'ι').replace('j', 'ι').replace('(', '').replace(')', '').replace('+', ' + ').replace('-', ' - ').replace(' - 0 ', '').replace(' + 0 ', '').replace(' - 0ι', '').replace(' + 0ι', '')
 
 
 
@@ -101,10 +111,14 @@ class HoverButton(Button):
         self.bind("<Leave>", self.onLeave)
 
     def onEnter(self, e):
+		global s
+		s(0.015)
         self["foreground"] = self["activeforeground"]
         self["background"] = self["activebackground"]
 
     def onLeave(self, e):
+		global s
+		s(0.015)
         self["foreground"] = self.defaultForeground
         self["background"] = self.defaultBackground
 
@@ -120,11 +134,16 @@ def press(num): ## Function to update expression in the text entry box
         ## Special case for factorials
         expression = 'fact(' + str(expression) + ')'
     else:
+        operatorList = [' + ', ' - ', ' × ', ' ÷ ']
+        if (expression != ''):
+            if ((expression[-1] == ' ') and (str(num) in operatorList)): ## For replacing operators
+                if not (((str(num) == ' - ') or (str(num) == ' + ')) and ((expression[-3: len(expression): 1] == ' × ') or (expression[-3: len(expression): 1] == ' ÷ '))):
+                    expression = expression[0: -3: 1]
         ## Concatenation of string 
         expression += str(num) 
 
     ## Update the expression by using set method 
-    equation.set(expression) 
+    equation.set(expression)
 
  
 def evaluate():   ## Function to evaluate the final expression
@@ -172,7 +191,7 @@ def baseConvertingCalculator():
                 res += whole
         else:
             res = bin(number)     
-        equation.set(str(res)[2::])
+        equation.set(str(res)[2: len(str(res)): 1])
 
     ## Function converts the value passed as parameter to it's decimal representation
     def binaryToDecimal(number):
@@ -317,7 +336,7 @@ def delete():   ## Function to clear the last entered character
 
 
 def onClosing():    ## User clicks ' X ' in attempt to exit the application
-    if (mb.askyesnocancel("Leave?", "Do you want to leave to the main application?")):    ## Prompts if user wants to leave the GUI; `Yes`: Leaves GUI, `No`: Stays in the GUI, `Cancel`: Closes and prompt and continues to stay in the GUI (similar to `No`)
+    if (mb.askyesnocancel("Leavin' so early?", "Do you want to exit the Calculator?")):    ## Prompts if user wants to leave the GUI; `Yes`: Leaves GUI, `No`: Stays in the GUI, `Cancel`: Closes and prompt and continues to stay in the GUI (similar to `No`)
         calculatorGUI.destroy()
 
 
