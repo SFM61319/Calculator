@@ -51,6 +51,7 @@ def evalall(string1):   ## Advanced `evalall()` function to evaluate mathematica
     string1 = string1.replace('fact(', 'm.gamma(1+')
     string1 = string1.replace('log(', 'm.log10(')
     string1 = string1.replace('log2(', 'm.log2(')
+	string1 = string1.replace('log₂(', 'm.log2(')
     string1 = string1.replace('ln(', 'm.log(')
     string1 = string1.replace('√(', 'm.sqrt(')
 
@@ -445,7 +446,7 @@ if (__name__ == "__main__"):
 
 	log = HoverButton(calculatorGUI, text=' \n log(x) \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press("log("), height=1, width=7).grid(row=9, column=2)
 
-	log2 = HoverButton(calculatorGUI, text=' \n log2(x) \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press("log2("), height=1, width=7).grid(row=9, column=3)
+	log2 = HoverButton(calculatorGUI, text=' \n log₂(x) \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press("log₂("), height=1, width=7).grid(row=9, column=3)
 
 	sqrt = HoverButton(calculatorGUI, text=' \n √x \n ', fg='#0064FF', bg='black', relief=FLAT, activebackground='#151519', activeforeground='#1DB954', font=['CircularStd', 28], command=lambda: press("√("), height=1, width=7).grid(row=9, column=4)
 
