@@ -4,6 +4,8 @@ Python program to create a simple GUI
 calculator using Tkinter
 """
 
+##### I have to add a feature that returns approximate value of the result if '=' is double-clicked or even clicked twice.
+##### I have to bind respective keys to buttons in the calculator GUI.
 
 ## Importing `math` module as `m`
 import math as m
